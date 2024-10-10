@@ -19,12 +19,14 @@ The code is imcomplete on purpose, it's a simulation of how most work is done, g
  At FCamara, we pay 20% commission for Local Sales and 35% commission on Foreign Sales.
  Our competitons only pay 2% commission and 7.55% on Foreign Sales.
 
-Write this code as if it's production quality.
-
 Example:
 - Local Sales count: 10
 - Foreign Sales Count: 10
 - Averaga Sales Amount: £100
 
 FCamara Commission: £550
-Competitor Commission: £95.5 
+    Local Sales Commission = 20% * 10 sales * 100 average sale
+    Foreign Sales Commission = 35% * 10 sales * 100 average sales
+Competitor Commission: £95.5
+    Local Sales Commission = 2% * 10 sales * 100 average sale
+    Foreign Sales Commission = 7.55% * 10 sales * 100 average sales
