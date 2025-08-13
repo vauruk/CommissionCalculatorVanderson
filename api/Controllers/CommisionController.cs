@@ -27,8 +27,8 @@ namespace FCamara.CommissionCalculator.Controllers
 
             decimal competitorCommission = 0.02m; //2%
             decimal competitorCommissionForeign = 0.0755m;//7.55%
-                                                          // Console.WriteLine("VARS:" + fCamaraCommission + " - " + fCamaraCommissionForeign + " - " + competitorCommission + " - " + competitorCommissionForeign);
-                                                          // Console.WriteLine("Values:" + calculationRequest.LocalSalesCount + " - " + calculationRequest.ForeignSalesCount + " - " + calculationRequest.AverageSaleAmount);
+
+
             return Ok(new CommissionCalculationResponse()
             {
                 FCamaraCommissionAmount = FCamaraCalculeteComission(calculationRequest, fCamaraCommission, fCamaraCommissionForeign),
