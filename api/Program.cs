@@ -7,9 +7,17 @@ namespace FCamara.CommissionCalculator
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
 
+            // Add services to the container.
             builder.Services.AddControllers();
+            // Configuração de CORS
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowFrontend",
+                    policy => policy.WithOrigins("http://localhost:3000")
+                                    .AllowAnyHeader()
+                                    .AllowAnyMethod());
+            });
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
@@ -25,8 +33,10 @@ namespace FCamara.CommissionCalculator
 
             app.UseHttpsRedirection();
 
-            app.UseAuthorization();
+            // Ativa o CORS antes do Authorization
+            app.UseCors("AllowFrontend");
 
+            app.UseAuthorization();
 
             app.MapControllers();
 
